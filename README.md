@@ -2,7 +2,7 @@
 
 ## Models
 - ResNet152v2
-- Transformer Decoder
+- Transformer Decoder (4 layers)
 
 # Results
 ![](figures/result.png)
