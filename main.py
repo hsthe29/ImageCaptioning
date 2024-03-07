@@ -1,16 +1,12 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
+from sentencepiece import SentencePieceProcessor
+from image_captioning.dataset import load_data, FlickrDataset
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
+    sp = SentencePieceProcessor()
+    sp.Load("tokenizer/english.model")
+    print(sp.EncodeAsPieces("Jang Judy"))
+    print(sp.Encode(["Jang Judy", "the"], add_bos=True, add_eos=True))
+    
+    train_df, dev_df, test_df = load_data()
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
